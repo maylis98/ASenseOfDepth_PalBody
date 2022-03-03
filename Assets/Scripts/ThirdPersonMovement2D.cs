@@ -30,11 +30,11 @@ public class ThirdPersonMovement2D : MonoBehaviour
             direction.y = jumpForce;
         }
 
-       /* if (horizontal != 0)
+        if (horizontal != 0)
         {
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(horizontal, 0, 0));
             model.rotation = newRotation;
-        }*/
+        }
 
 
         controller.Move(direction * Time.deltaTime);
