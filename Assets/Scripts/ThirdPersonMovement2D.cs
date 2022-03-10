@@ -8,7 +8,9 @@ public class ThirdPersonMovement2D : MonoBehaviour
 
     public float speed = 6;
     public float jumpForce = 10;
-    public float gravity = 0;
+    public float gravityScale = 0;
+    public Transform groundCheck;
+    public LayerMask groundLayer; 
 
     public Animator animator;
 
@@ -20,14 +22,15 @@ public class ThirdPersonMovement2D : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         direction.x = horizontal * speed;
 
-        animator.SetFloat("speed", Mathf.Abs(horizontal));
+        bool IsGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
+        animator.SetBool("isGrounded", IsGrounded);
 
-        //walk
-        direction.y += gravity * Time.deltaTime; 
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            direction.y = jumpForce;
+        if (IsGrounded) { 
+            if (Input.GetButtonDown("Jump"))
+            {
+                direction.y = jumpForce;
+            
+            }
         }
 
         if (horizontal != 0)
@@ -36,7 +39,24 @@ public class ThirdPersonMovement2D : MonoBehaviour
             model.rotation = newRotation;
         }
 
+        animator.SetFloat("speed", Mathf.Abs(horizontal));
+     
 
+        direction.y += (Physics.gravity.y * gravityScale); /** Time.deltaTime;*/
         controller.Move(direction * Time.deltaTime);
     }
+
+    /*private void OnTriggerEnter(Collider other)
+    {
+        direction.x = 0;
+        StartCoroutine(wait());
+    }
+
+    IEnumerator wait()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+
+        yield return new WaitForSeconds(2);
+        direction.x = horizontal * speed;
+    }*/
 }
