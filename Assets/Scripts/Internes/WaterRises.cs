@@ -9,9 +9,14 @@ public class WaterRises : MonoBehaviour
     public Animator windAnimator;
     public GameObject fragmentBox1;
 
+    private BoxCollider boxCollider;
+
+    public float timeUntilGoDown = 20;
+
     // Start is called before the first frame update
     void Start()
     {
+        boxCollider = this.GetComponent<BoxCollider>();
         fragmentBox1.SetActive(false);
     }
 
@@ -21,6 +26,7 @@ public class WaterRises : MonoBehaviour
         {
             waterAnimator.SetBool("waterUp", true);
             playerAnimator.SetBool("scared", true);
+            boxCollider.enabled = false;
             StartCoroutine(boxAppearStopAnim());
 
         }
@@ -33,10 +39,10 @@ public class WaterRises : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         windAnimator.SetBool("push", false);
+        playerAnimator.SetBool("scared", false);
 
-        yield return new WaitForSeconds(25);
+        yield return new WaitForSeconds(timeUntilGoDown);
         waterAnimator.SetBool("waterUp", false);
-        playerAnimator.SetBool("scared", false);  
         
     }
 }
