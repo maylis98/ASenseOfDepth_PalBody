@@ -15,6 +15,7 @@ TagManager:
   - WaterRises
   - OpenBox
   - fragmentBox
+  - ChangeCamera
   layers:
   - Default
   - TransparentFX

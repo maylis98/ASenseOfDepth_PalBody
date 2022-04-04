@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class OpenBox: MonoBehaviour
 {
+    //Elements to trigger
     [SerializeField]
     private Animator boxAnimator;
 
@@ -17,11 +19,29 @@ public class OpenBox: MonoBehaviour
     public float smoothSpeed = 0.125f;
     bool boxIsTouched;
 
+    //VFX
+    [SerializeField]
+    private VisualEffect visualEffect;
+
+    //VFX properties
+    [SerializeField, Range(0, 6)]
+    private float expansion = 0;
+
+    [SerializeField, Range(0, 7)]
+    private float spread = 0;
+
+    [SerializeField, Range(0, 4)]
+    private float fluxIntensity = 0;
+
+    //Canvas for transition
+    public Animator canvasAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
         boxIsTouched = false;
         boxAnimator = GetComponent<Animator>();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -69,5 +89,48 @@ public class OpenBox: MonoBehaviour
         Vector3 desiredPosition = new Vector3(transform.position.x, sphereUp, transform.position.z);
         Vector3 smoothedPosition = Vector3.Lerp(sphereFragment.position, desiredPosition, smoothSpeed);
         sphereFragment.position = smoothedPosition;
+
+        visualEffect.SetFloat("Lifetime Expansion", expansion);
+        visualEffect.SetFloat("Spread", spread);
+        visualEffect.SetFloat("Flux Intensity", fluxIntensity);
+
+        StartCoroutine(sphereExpand());
     }
+
+    IEnumerator sphereExpand()
+    {
+        yield return new WaitForSeconds(3);
+
+        //Change VFX values
+        visualEffect.SetFloat("Lifetime Expansion", 3.1f);
+        visualEffect.SetFloat("Spread", spread);
+        visualEffect.SetFloat("Flux Intensity", 3.1f);
+
+        yield return new WaitForSeconds(3);
+
+        canvasAnimator.SetBool("toWhite", true);    
+    }
+
+    private void endFragment()
+    {
+        canvasAnimator.SetBool("IsFinished", true);
+    }
+
+    public void endVFX()
+    {
+        //Change VFX values
+        visualEffect.SetFloat("Lifetime Expansion", 0f);
+        visualEffect.SetFloat("Spread", 0f);
+        
+    }
+
+    IEnumerator deleteSphere()
+    {
+        yield return new WaitForSeconds(3);
+
+        visualEffect.enabled = false;
+    }
+
+
+
 }

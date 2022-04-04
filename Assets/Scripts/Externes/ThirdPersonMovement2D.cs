@@ -15,7 +15,14 @@ public class ThirdPersonMovement2D : MonoBehaviour
     public Animator animator;
 
     public Transform model;
-    
+
+    public GameObject followingObj;
+
+    private void Start()
+    {
+        followingObj.SetActive(false);
+    }
+
     void Update()
     {
        //walk
@@ -44,6 +51,24 @@ public class ThirdPersonMovement2D : MonoBehaviour
 
         direction.y += (Physics.gravity.y * gravityScale); /** Time.deltaTime;*/
         controller.Move(direction * Time.deltaTime);
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("ChangeCamera"))
+        {
+            StartCoroutine(FieldAppear());
+        }
+    }
+
+    IEnumerator FieldAppear()
+    {
+        yield return new WaitForSeconds(4);
+        followingObj.SetActive(true);
+
+        yield return new WaitForSeconds(6);
+        FindObjectOfType<ScaleLerper>().ChangeScale();
     }
 
     /*private void OnTriggerEnter(Collider other)
