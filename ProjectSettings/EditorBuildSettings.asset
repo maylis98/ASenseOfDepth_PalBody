@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ASenseofDepth_Intro.unity
     guid: 850e70f7a3a024a44a00e5e39773ba56
   - enabled: 1
-    path: Assets/Scenes/ASenseofDepth_v3.unity
+    path: Assets/Scenes/ASenseofDepth_Main.unity
     guid: 8644313bed26e2f439fc4a58657f959c
   m_configObjects: {}
