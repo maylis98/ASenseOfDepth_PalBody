@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ASenseofDepth_Intro.unity
     guid: 850e70f7a3a024a44a00e5e39773ba56
   - enabled: 1

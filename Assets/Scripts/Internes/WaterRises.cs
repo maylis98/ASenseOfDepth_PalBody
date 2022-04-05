@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WaterRises : MonoBehaviour
 {
-    public Animator waterAnimator;
-    public Animator playerAnimator;
+    [SerializeField]
+    private UnityEvent trigger;
+
+    [SerializeField]
+    private UnityEvent end;
+
+    [SerializeField]
+    private UnityEvent after4Seconds;
+
     public Animator windAnimator;
     public GameObject fragmentBox1;
 
@@ -17,15 +25,15 @@ public class WaterRises : MonoBehaviour
     void Start()
     {
         boxCollider = this.GetComponent<BoxCollider>();
-        fragmentBox1.SetActive(false);
+        //fragmentBox1.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            waterAnimator.SetBool("waterUp", true);
-            playerAnimator.SetBool("scared", true);
+            trigger.Invoke();
+            //playerAnimator.SetBool("scared", true);
             boxCollider.enabled = false;
             StartCoroutine(boxAppearStopAnim());
 
@@ -39,10 +47,10 @@ public class WaterRises : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         windAnimator.SetBool("push", false);
-        playerAnimator.SetBool("scared", false);
+        after4Seconds.Invoke();
 
         yield return new WaitForSeconds(timeUntilGoDown);
-        waterAnimator.SetBool("waterUp", false);
+        end.Invoke();
         
     }
 }

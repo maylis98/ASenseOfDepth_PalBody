@@ -18,7 +18,6 @@ public class GetsAngry : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerAnimator.SetBool("angry", true);
             SwitchState();
 
             StartCoroutine(stopAnim());
@@ -29,15 +28,12 @@ public class GetsAngry : MonoBehaviour
     IEnumerator stopAnim()
     {
         yield return new WaitForSeconds(8);
-        PlayerAnimator.SetBool("angry", false);
         CineCameraAnimator.Play("view from Side");
         PP.priority = 0;
     }
 
     private void SwitchState()
     {
-        //change this
-        CineCameraAnimator.Play("view Focus");
         PP.priority = 2;
     }
 }

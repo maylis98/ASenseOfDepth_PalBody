@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
+using UnityEngine.Events;
 
 public class OpenBox: MonoBehaviour
 {
+    [SerializeField]
+    private UnityEvent trigger;
+
     //Elements to trigger
     [SerializeField]
     private Animator boxAnimator;
+
+    public GameObject box;
 
     [SerializeField]
     private Transform sphereFragment;
@@ -33,8 +39,6 @@ public class OpenBox: MonoBehaviour
     [SerializeField, Range(0, 4)]
     private float fluxIntensity = 0;
 
-    //Canvas for transition
-    public Animator canvasAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +46,7 @@ public class OpenBox: MonoBehaviour
         boxIsTouched = false;
         boxAnimator = GetComponent<Animator>();
 
+        DisactiveBox();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -108,12 +113,12 @@ public class OpenBox: MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        canvasAnimator.SetBool("toWhite", true);    
+        trigger.Invoke();
     }
 
     private void endFragment()
     {
-        canvasAnimator.SetBool("IsFinished", true);
+        //canvasAnimator.SetBool("IsFinished", true);
     }
 
     public void endVFX()
@@ -129,6 +134,18 @@ public class OpenBox: MonoBehaviour
         yield return new WaitForSeconds(3);
 
         visualEffect.enabled = false;
+    }
+
+    public void ActiveBox()
+    {
+        box.SetActive(false);
+    }
+
+    public void DisactiveBox()
+    {
+
+        box.SetActive(false);
+
     }
 
 
