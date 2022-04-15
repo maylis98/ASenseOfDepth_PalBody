@@ -76,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - BlendHeight: 1.36
+    - BlendHeight: 1.68
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
