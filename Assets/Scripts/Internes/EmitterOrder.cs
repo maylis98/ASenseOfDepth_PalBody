@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class EmitterOrder : MonoBehaviour
 {
-    void Update()
+    public void ARSceneEnd(bool endMemory)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("data has been sent");
-            EventManager.TriggerEvent("StartTimeline", true);
-        }
-        
+        Debug.Log("the AR scene is finished");
+        EventManager.TriggerEvent("CloseMemory", endMemory);
     }
+
+    public void SendInputdata(bool moveButtonIsPressed)
+    {
+        EventManager.TriggerEvent("PlayerInput", moveButtonIsPressed);
+    }
+
 }
+

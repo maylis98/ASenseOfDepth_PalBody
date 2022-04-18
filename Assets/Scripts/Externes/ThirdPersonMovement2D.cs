@@ -6,7 +6,9 @@ public class ThirdPersonMovement2D : MonoBehaviour
     public CharacterController controller;
     private Vector3 direction;
 
-    public float speed = 6;
+    private bool moveRight;
+    private float horizontal;
+    public float speed;
     public float jumpForce = 10;
     public float gravityScale = 0;
     public Transform groundCheck;
@@ -20,23 +22,45 @@ public class ThirdPersonMovement2D : MonoBehaviour
 
     private void Start()
     {
+        moveRight = false;
         followingObj.SetActive(false);
     }
 
     void Update()
     {
-       //walk
-        float horizontal = Input.GetAxisRaw("Horizontal");
+        EventManager.StartListening("PlayerInput", stateofMove);
+        keyboardInput();
+
+    }
+
+    private void stateofMove(object buttonIsPressed)
+    {
+        moveRight = (bool)buttonIsPressed;
+
+        if (moveRight == true)
+        {
+            horizontal = 1;
+        }
+        else if (moveRight == false)
+        {
+            horizontal = 0;
+        }
+    }
+
+    private void keyboardInput()
+    {
+        //WALK
+        //float horizontal = Input.GetAxisRaw("Horizontal");
         direction.x = horizontal * speed;
 
         bool IsGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
         animator.SetBool("isGrounded", IsGrounded);
 
-        if (IsGrounded) { 
+        if (IsGrounded)
+        {
             if (Input.GetButtonDown("Jump"))
             {
                 direction.y = jumpForce;
-            
             }
         }
 
@@ -47,11 +71,11 @@ public class ThirdPersonMovement2D : MonoBehaviour
         }
 
         animator.SetFloat("speed", Mathf.Abs(horizontal));
-     
 
         direction.y += (Physics.gravity.y * gravityScale); /** Time.deltaTime;*/
-        controller.Move(direction * Time.deltaTime);
 
+        Vector3 currentMovement = new Vector3(direction.x, direction.y, direction.z);
+        controller.Move(currentMovement * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -9,14 +9,16 @@ public class OpenBox: MonoBehaviour
     [SerializeField]
     private UnityEvent trigger;
 
+    [SerializeField]
+    private UnityEvent onSphereVisible;
+
     //Elements to trigger
-    [SerializeField]
-    private Animator boxAnimator;
-
     public GameObject box;
+    public GameObject rippleSphere;
 
-    [SerializeField]
+    private Animator boxAnimator;
     private Transform sphereFragment;
+    private VisualEffect visualEffect;
 
     [SerializeField]
     private Animator playerAnimator;
@@ -24,10 +26,8 @@ public class OpenBox: MonoBehaviour
     public float offset;
     public float smoothSpeed = 0.125f;
     bool boxIsTouched;
+    private bool closeMemory;
 
-    //VFX
-    [SerializeField]
-    private VisualEffect visualEffect;
 
     //VFX properties
     [SerializeField, Range(0, 6)]
@@ -44,7 +44,10 @@ public class OpenBox: MonoBehaviour
     void Start()
     {
         boxIsTouched = false;
-        boxAnimator = GetComponent<Animator>();
+        closeMemory = false;
+        boxAnimator = box.GetComponent<Animator>();
+        sphereFragment = rippleSphere.GetComponent<Transform>();
+        visualEffect = rippleSphere.GetComponent<VisualEffect>();
 
         DisactiveBox();
     }
@@ -57,6 +60,7 @@ public class OpenBox: MonoBehaviour
             boxIsTouched = true;
 
             Invoke("touchOnce", 1);
+            onSphereVisible.Invoke();
 
             //Invoke("boxFade", 4);
 
@@ -114,26 +118,16 @@ public class OpenBox: MonoBehaviour
         yield return new WaitForSeconds(3);
 
         trigger.Invoke();
+        StopAllCoroutines();
     }
 
-    private void endFragment()
+    public void endFragment()
     {
-        //canvasAnimator.SetBool("IsFinished", true);
-    }
+            visualEffect.SetFloat("Lifetime Expansion", 0f);
+            visualEffect.SetFloat("Spread", 0f);
+            visualEffect.SetFloat("Number of Particles", 0f);
 
-    public void endVFX()
-    {
-        //Change VFX values
-        visualEffect.SetFloat("Lifetime Expansion", 0f);
-        visualEffect.SetFloat("Spread", 0f);
-        
-    }
-
-    IEnumerator deleteSphere()
-    {
-        yield return new WaitForSeconds(3);
-
-        visualEffect.enabled = false;
+            Invoke("DisactiveBox", 5);
     }
 
     public void ActiveBox()
@@ -143,9 +137,7 @@ public class OpenBox: MonoBehaviour
 
     public void DisactiveBox()
     {
-
         box.SetActive(false);
-
     }
 
 

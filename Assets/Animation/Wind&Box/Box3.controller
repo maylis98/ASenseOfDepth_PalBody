@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 000b7c71d9ab681418aca8878f62c6f8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 537708982d4188b42a79dc13c53f09ef, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -97,7 +97,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c0d4b7d81f983614e89476ae89458056, type: 2}
+  m_Motion: {fileID: 7400000, guid: f02bc4fa1cea544498d9137e81917ab3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -109,7 +109,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fragmentBox
+  m_Name: Box3
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: disappear
@@ -117,7 +117,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -177,7 +177,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3a5c3b1eb86c3034d9df0a0bd9978a38, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7396d91e0fca9b049a8e5050e7ae65ca, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
