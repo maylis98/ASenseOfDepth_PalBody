@@ -21,7 +21,6 @@ public class WaterRises : MonoBehaviour
 
     public float timeUntilGoDown = 20;
 
-    // Start is called before the first frame update
     void Start()
     {
         boxCollider = this.GetComponent<BoxCollider>();
@@ -33,7 +32,6 @@ public class WaterRises : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             trigger.Invoke();
-            //playerAnimator.SetBool("scared", true);
             boxCollider.enabled = false;
             StartCoroutine(boxAppearStopAnim());
 

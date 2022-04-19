@@ -15,5 +15,11 @@ public class EmitterOrder : MonoBehaviour
         EventManager.TriggerEvent("PlayerInput", moveButtonIsPressed);
     }
 
+    public void StartGameTimeline(bool gameIsStarted)
+    {
+        Debug.Log("game timeline is started");
+        EventManager.TriggerEvent("StartGame", gameIsStarted);
+    }
+
 }
 
