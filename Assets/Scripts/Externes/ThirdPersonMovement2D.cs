@@ -40,10 +40,14 @@ public class ThirdPersonMovement2D : MonoBehaviour
         if (moveRight == true)
         {
             horizontal = 1;
+            //followingObj.SetActive(false);
+            //FindObjectOfType<NativeWebsocketChat>().SendChatMessage("distortion field");
+            
         }
         else if (moveRight == false)
         {
             horizontal = 0;
+            //StartCoroutine(FieldAppear());
         }
     }
 
@@ -76,14 +80,6 @@ public class ThirdPersonMovement2D : MonoBehaviour
 
         Vector3 currentMovement = new Vector3(direction.x, direction.y, direction.z);
         controller.Move(currentMovement * Time.deltaTime);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("ChangeCamera"))
-        {
-            StartCoroutine(FieldAppear());
-        }
     }
 
     IEnumerator FieldAppear()
