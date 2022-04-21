@@ -121,26 +121,26 @@ VisualEffect:
       m_Array:
       - m_Value:
           serializedVersion: 2
-          key0: {r: 1, g: 1, b: 1, a: 1}
+          key0: {r: 1, g: 1, b: 1, a: 0}
           key1: {r: 0.9811321, g: 0.9325264, b: 0.7651596, a: 1}
           key2: {r: 1, g: 1, b: 1, a: 1}
-          key3: {r: 1, g: 0.8741642, b: 0.48742133, a: 1}
-          key4: {r: 1, g: 1, b: 1, a: 1}
+          key3: {r: 1, g: 0.8741642, b: 0.48742133, a: 0.52809757}
+          key4: {r: 1, g: 1, b: 1, a: 0}
           key5: {r: 1, g: 1, b: 1, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 9042
+          ctime1: 18311
           ctime2: 31033
-          ctime3: 61175
+          ctime3: 47031
           ctime4: 65535
           ctime5: 65535
           ctime6: 0
           ctime7: 0
           atime0: 0
-          atime1: 8272
+          atime1: 17540
           atime2: 31226
-          atime3: 60790
+          atime3: 47417
           atime4: 65535
           atime5: 0
           atime6: 0
@@ -431,14 +431,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: ...Pal remembers...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3086dec6b19a580459210740d584a9f5, type: 2}
-  m_sharedMaterial: {fileID: -8092384123293598871, guid: 3086dec6b19a580459210740d584a9f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 243aa28fab9013f46abb43f86c873774, type: 2}
+  m_sharedMaterial: {fileID: 2065115830244543913, guid: 243aa28fab9013f46abb43f86c873774, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 0
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -666,8 +666,6 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -246241209557145732, guid: 54f4a097c79b1344ebc4c403b5ac71d6, type: 2}
     value: {fileID: 158385889769549487}
-  - key: {fileID: -4768613357841006472, guid: 54f4a097c79b1344ebc4c403b5ac71d6, type: 2}
-    value: {fileID: 158385890216171471}
   - key: {fileID: 5447184669733005343, guid: 54f4a097c79b1344ebc4c403b5ac71d6, type: 2}
     value: {fileID: 158385889953233436}
   - key: {fileID: -5768280319557031270, guid: 54f4a097c79b1344ebc4c403b5ac71d6, type: 2}
@@ -774,8 +772,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '[scan to unlock the memory]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3086dec6b19a580459210740d584a9f5, type: 2}
-  m_sharedMaterial: {fileID: -8092384123293598871, guid: 3086dec6b19a580459210740d584a9f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 243aa28fab9013f46abb43f86c873774, type: 2}
+  m_sharedMaterial: {fileID: 2065115830244543913, guid: 243aa28fab9013f46abb43f86c873774, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -913,8 +911,6 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -246241209557145732, guid: c2832cf15efd4074f86b5aebde5804b8, type: 2}
     value: {fileID: 158385889769549487}
-  - key: {fileID: -4768613357841006472, guid: c2832cf15efd4074f86b5aebde5804b8, type: 2}
-    value: {fileID: 158385890216171471}
   - key: {fileID: 5447184669733005343, guid: c2832cf15efd4074f86b5aebde5804b8, type: 2}
     value: {fileID: 158385889953233436}
   - key: {fileID: -5768280319557031270, guid: c2832cf15efd4074f86b5aebde5804b8, type: 2}
@@ -938,6 +934,7 @@ GameObject:
   - component: {fileID: 158385890903407548}
   - component: {fileID: 158385890903407556}
   - component: {fileID: 158385890903407551}
+  - component: {fileID: 231734590}
   m_Layer: 0
   m_Name: Box 1
   m_TagString: fragmentBox
@@ -988,7 +985,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e31e28d4ea2840f4b99c570159b3fd79, type: 2}
+  - {fileID: 2100000, guid: cda6ebe3057aa5b4a8b94c792efd3ff3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1131,6 +1128,30 @@ MonoBehaviour:
           m_StringArgument: memory 1 is called
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ImageCanvasManager, Assembly-CSharp
+        m_MethodName: changeImage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 231734590}
+        m_TargetAssemblyTypeName: GradientMaterialManager, Assembly-CSharp
+        m_MethodName: changeMaterial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   box: {fileID: 158385890903407559}
   rippleSphere: {fileID: 158385889591801541}
   playerAnimator: {fileID: 0}
@@ -1139,6 +1160,21 @@ MonoBehaviour:
   expansion: 1.44
   spread: 1.52
   fluxIntensity: 1.22
+--- !u!114 &231734590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158385890903407559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95121f778462cf48bccda8c79b1bcc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToChange: 1
+  targetValue: 0.4
+  transitionTime: 1
 --- !u!1 &158385890939954274
 GameObject:
   m_ObjectHideFlags: 0
