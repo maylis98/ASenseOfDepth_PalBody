@@ -79,7 +79,7 @@ Material:
     - BlendHeight: 1.68
     - _AlphaClip: 0
     - _Blend: 0
-    - _BlendHeight: 0.4020485
+    - _BlendHeight: 1
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0

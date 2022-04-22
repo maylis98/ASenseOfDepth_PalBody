@@ -23,7 +23,7 @@ public class ThirdPersonMovement2D : MonoBehaviour
     private void Start()
     {
         moveRight = false;
-        followingObj.SetActive(false);
+        //followingObj.SetActive(false);
     }
 
     void Update()
@@ -40,6 +40,7 @@ public class ThirdPersonMovement2D : MonoBehaviour
         if (moveRight == true)
         {
             horizontal = 1;
+            FindObjectOfType<DistortionFieldManager>().goSmall();
             //followingObj.SetActive(false);
             //FindObjectOfType<NativeWebsocketChat>().SendChatMessage("distortion field");
             
@@ -47,6 +48,7 @@ public class ThirdPersonMovement2D : MonoBehaviour
         else if (moveRight == false)
         {
             horizontal = 0;
+            FindObjectOfType<DistortionFieldManager>().goBig();
             //StartCoroutine(FieldAppear());
         }
     }
@@ -82,14 +84,14 @@ public class ThirdPersonMovement2D : MonoBehaviour
         controller.Move(currentMovement * Time.deltaTime);
     }
 
-    IEnumerator FieldAppear()
+   /* IEnumerator FieldAppear()
     {
         yield return new WaitForSeconds(4);
-        followingObj.SetActive(true);
+        FindObjectOfType<DistortionFieldManager>().goSmall();
 
         yield return new WaitForSeconds(6);
         FindObjectOfType<ScaleLerper>().ChangeScale();
-    }
+    }*/
 
     /*private void OnTriggerEnter(Collider other)
     {
