@@ -62,14 +62,6 @@ public class ThirdPersonMovement2D : MonoBehaviour
         bool IsGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
         animator.SetBool("isGrounded", IsGrounded);
 
-        if (IsGrounded)
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                direction.y = jumpForce;
-            }
-        }
-
         if (horizontal != 0)
         {
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(horizontal, 0, 0));
@@ -84,26 +76,4 @@ public class ThirdPersonMovement2D : MonoBehaviour
         controller.Move(currentMovement * Time.deltaTime);
     }
 
-   /* IEnumerator FieldAppear()
-    {
-        yield return new WaitForSeconds(4);
-        FindObjectOfType<DistortionFieldManager>().goSmall();
-
-        yield return new WaitForSeconds(6);
-        FindObjectOfType<ScaleLerper>().ChangeScale();
-    }*/
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        direction.x = 0;
-        StartCoroutine(wait());
-    }
-
-    IEnumerator wait()
-    {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-
-        yield return new WaitForSeconds(2);
-        direction.x = horizontal * speed;
-    }*/
 }

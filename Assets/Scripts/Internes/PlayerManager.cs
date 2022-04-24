@@ -5,12 +5,37 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public Animator characterAnimator;
-    public SkinnedMeshRenderer veilMesh;
+    public GameObject veil;
+    public GameObject body;
+    private Material veilMaterial;
+    private Material bodyMaterial;
+    //public SkinnedMeshRenderer veilMesh;
     private bool IsBlinking;
+
+    [SerializeField]
+    private Color colorToChange;
+    [SerializeField]
+    private Color blinkingColor;
+    [SerializeField]
+    private Color endColor;
+    [SerializeField]
+    private Color startColorA;
+    [SerializeField]
+    private Color endColorA;
+    [SerializeField]
+    private float timeVeilDisappear;
+    [SerializeField]
+    private float timeBodyAppear;
+
+
 
     private void Start()
     {
         IsBlinking = false;
+        veilMaterial = veil.GetComponent<Renderer>().sharedMaterial;
+        bodyMaterial = body.GetComponent<Renderer>().sharedMaterial;
+        veilMaterial.color = colorToChange;
+        bodyMaterial.SetColor("_Color_A", startColorA);
     }
 
     public void IsScared()
@@ -22,6 +47,19 @@ public class PlayerManager : MonoBehaviour
     {
         characterAnimator.SetBool("scared", false);
     }
+
+    public void IsSurprised()
+    {
+        characterAnimator.SetBool("isSurprised", true);
+    }
+
+
+    public void IsNotSurprised()
+    {
+        characterAnimator.SetBool("isSurprised", false);
+    }
+
+
 
     public void LookAround()
     {
@@ -49,7 +87,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(3);
-        veilMesh.enabled = true;
+        veilMaterial.color = colorToChange;
         IsBlinking = false;
         CancelInvoke("Blink");
         StopAllCoroutines();
@@ -57,15 +95,54 @@ public class PlayerManager : MonoBehaviour
 
     private void Blink()
     {
-        if (veilMesh.enabled == false)
+        if (veilMaterial.color == blinkingColor)
         {
-            veilMesh.enabled = true;
+            veilMaterial.color = colorToChange;
         }
 
+        else if (veilMaterial.color == colorToChange)
+        {
+            veilMaterial.color = blinkingColor;
+        }
         else
         {
-            veilMesh.enabled = false;
+            veilMaterial.color = colorToChange;
         }
     }
 
+    public void veilDisappearBodyAppear()
+    {
+        StartCoroutine(LerpVeilColor(endColor, timeVeilDisappear));
+        StartCoroutine(LerpBodyGradient(endColorA, timeBodyAppear));
+    }
+
+
+
+    IEnumerator LerpVeilColor(Color targetColor, float duration)
+    {
+        float time = 0;
+        Color startColor = veilMaterial.color;
+        while (time < duration)
+        {
+            veilMaterial.color = Color.Lerp(startColor, targetColor, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        veilMaterial.color = targetColor;
+    }
+
+    IEnumerator LerpBodyGradient(Color endColor, float durationFade)
+    {
+        float time = 0;
+        Color startValue = startColorA;
+        while (time < durationFade)
+        {
+            startColorA = Color.Lerp(startValue, endColor, time / durationFade);
+            time += Time.deltaTime;
+            bodyMaterial.SetColor("_Color_A", startColorA);
+            yield return null;
+        } 
+
+    }
 }

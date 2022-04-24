@@ -6,17 +6,18 @@ using UnityEngine.Events;
 
 public class OpenBox: MonoBehaviour
 {
-    [SerializeField]
-    private UnityEvent trigger;
 
     [SerializeField]
-    private UnityEvent onSphereVisible;
+    private UnityEvent boxTouched;
+
+    [SerializeField]
+    private UnityEvent sphereIsUp;
+    
 
     //Elements to trigger
     public GameObject box;
     public GameObject rippleSphere;
 
-    private Animator boxAnimator;
     private Transform sphereFragment;
     private VisualEffect visualEffect;
 
@@ -26,7 +27,6 @@ public class OpenBox: MonoBehaviour
     public float offset;
     public float smoothSpeed = 0.125f;
     bool boxIsTouched;
-    private bool closeMemory;
 
 
     //VFX properties
@@ -40,12 +40,9 @@ public class OpenBox: MonoBehaviour
     private float fluxIntensity = 0;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         boxIsTouched = false;
-        closeMemory = false;
-        boxAnimator = box.GetComponent<Animator>();
         sphereFragment = rippleSphere.GetComponent<Transform>();
         visualEffect = rippleSphere.GetComponent<VisualEffect>();
 
@@ -56,13 +53,8 @@ public class OpenBox: MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerAnimator.SetBool("touching", true);
             boxIsTouched = true;
-
-            Invoke("touchOnce", 1);
-            onSphereVisible.Invoke();
-
-            //Invoke("boxFade", 4);
+            boxTouched.Invoke();
 
         }
     }
@@ -71,25 +63,13 @@ public class OpenBox: MonoBehaviour
     {
         if (boxIsTouched)
         {
-            boxFade();
-            Invoke("stopAnim", 14);
+            Invoke("sphereUp", 2);
         }
-    }
-
-    private void touchOnce()
-    {
-        playerAnimator.SetBool("touching", false);
-    }
-    private void boxFade()
-    {
-        boxAnimator.SetBool("disappear", true);
-        Invoke("sphereUp", 2);
     }
 
     private void stopAnim()
     {
         boxIsTouched = false;
-        boxAnimator.SetBool("disappear", false);
     }
 
     private void sphereUp()
@@ -117,7 +97,7 @@ public class OpenBox: MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        trigger.Invoke();
+        sphereIsUp.Invoke();
         StopAllCoroutines();
     }
 
@@ -127,7 +107,7 @@ public class OpenBox: MonoBehaviour
             visualEffect.SetFloat("Spread", 0f);
             visualEffect.SetFloat("Number of Particles", 0f);
 
-            Invoke("DisactiveBox", 5);
+            //Invoke("DisactiveBox", 5);
     }
 
     public void ActiveBox()

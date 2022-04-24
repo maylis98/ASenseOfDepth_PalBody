@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    public Animator transition;
-
     public float transitionTime = 1f;
 
     public void Load()
     {
         //if (Input.GetMouseButton(0))
-        transition.SetBool("isEnd", true);
+        //transition.SetBool("isEnd", true);
         LoadNextLevel();
     }
 
@@ -24,7 +22,7 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
 
-        transition.SetTrigger("start");
+        //transition.SetTrigger("start");
 
         yield return new WaitForSeconds(transitionTime);
 

@@ -849,7 +849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9904fad62fcae8d40b2e57121beb28b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 366310954}
   transitionTime: 5
 --- !u!225 &366310956
 CanvasGroup:
@@ -1073,7 +1072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &658260379
 RectTransform:
   m_ObjectHideFlags: 0

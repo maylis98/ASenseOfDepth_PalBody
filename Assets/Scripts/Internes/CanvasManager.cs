@@ -20,16 +20,19 @@ public class CanvasManager : MonoBehaviour
         canvasStartTimeline.Play();
     }
 
+    public void pauseTimeline()
+    {
+        canvasStartTimeline.Pause();
+    }
     public void endTimeline(object data)
     {
         if(closeMemory = (bool)data)
         {
             canvasStartTimeline.Stop();
+            canvasStartTimeline.enabled = false;
             canvasCloseTimeline.Play();
         }
         
     }
-
-
 
 }

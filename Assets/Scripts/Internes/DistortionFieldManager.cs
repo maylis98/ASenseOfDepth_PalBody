@@ -58,4 +58,19 @@ public class DistortionFieldManager : MonoBehaviour
 
     }
 
+    IEnumerator enableAfter(float duration)
+    {
+        yield return new WaitForSeconds(duration + 1);
+        MeshRenderer fieldMR = GetComponent<MeshRenderer>();
+        fieldMR.enabled = false;
+
+    }
+
+    public void fieldDisappear() 
+    {
+        goSmall();
+        StartCoroutine(enableAfter(transitionTime));
+        
+    }
+
 }

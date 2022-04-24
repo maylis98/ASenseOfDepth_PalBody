@@ -11,8 +11,6 @@ using System.Text;
 using TMPro;
 
 
-
-
 // https://github.com/endel/NativeWebSocket
 
 public class NativeWebsocketChat : MonoBehaviour
