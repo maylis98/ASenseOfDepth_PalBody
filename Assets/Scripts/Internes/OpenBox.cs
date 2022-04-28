@@ -24,9 +24,11 @@ public class OpenBox: MonoBehaviour
     [SerializeField]
     private Animator playerAnimator;
 
-    public float offset;
-    public float smoothSpeed = 0.125f;
-    bool boxIsTouched;
+    //public float offset;
+    public Vector3 sphereNewPos;
+    public float timeToGoUp;
+    //public float smoothSpeed = 0.125f;
+    //bool boxIsTouched;
 
 
     //VFX properties
@@ -42,8 +44,7 @@ public class OpenBox: MonoBehaviour
 
     void Start()
     {
-        boxIsTouched = false;
-        sphereFragment = rippleSphere.GetComponent<Transform>();
+        //boxIsTouched = false;
         visualEffect = rippleSphere.GetComponent<VisualEffect>();
 
         DisactiveBox();
@@ -53,7 +54,7 @@ public class OpenBox: MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            boxIsTouched = true;
+            //boxIsTouched = true;
             boxTouched.Invoke();
 
         }
@@ -61,29 +62,50 @@ public class OpenBox: MonoBehaviour
 
     private void Update()
     {
-        if (boxIsTouched)
+        /*if (boxIsTouched)
         {
             Invoke("sphereUp", 2);
-        }
+        }*/
     }
 
     private void stopAnim()
     {
-        boxIsTouched = false;
+        //boxIsTouched = false;
     }
 
-    private void sphereUp()
+    public void sphereUp()
     {
-        float sphereUp = transform.position.y + offset;
+        /*float sphereUp = transform.position.y + offset;
         Vector3 desiredPosition = new Vector3(transform.position.x, sphereUp, transform.position.z);
         Vector3 smoothedPosition = Vector3.Lerp(sphereFragment.position, desiredPosition, smoothSpeed);
-        sphereFragment.position = smoothedPosition;
+        sphereFragment.position = smoothedPosition;*/
+
+        /*visualEffect.SetFloat("Lifetime Expansion", expansion);
+        visualEffect.SetFloat("Spread", spread);
+        visualEffect.SetFloat("Flux Intensity", fluxIntensity);*/
+        StartCoroutine(sphereGoUp(sphereNewPos, timeToGoUp));
+
+        StartCoroutine(sphereExpand());
+    }
+
+    IEnumerator sphereGoUp(Vector3 desiredPosition, float duration)
+    {
+        sphereFragment = rippleSphere.GetComponent<Transform>();
+
+        float time = 0;
+        Vector3 startPosition = sphereFragment.position;
+        while (time < duration)
+        {
+            sphereFragment.position = Vector3.Lerp(startPosition, startPosition + desiredPosition, time / duration);
+            time += Time.deltaTime;
+            //Vector3 currentPos = sphereFragment.position;
+            yield return null;
+        }
 
         visualEffect.SetFloat("Lifetime Expansion", expansion);
         visualEffect.SetFloat("Spread", spread);
         visualEffect.SetFloat("Flux Intensity", fluxIntensity);
 
-        StartCoroutine(sphereExpand());
     }
 
     IEnumerator sphereExpand()

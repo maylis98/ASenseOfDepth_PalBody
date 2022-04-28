@@ -5,18 +5,18 @@ using UnityEngine.Playables;
 
 public class CanvasManager : MonoBehaviour
 {
-    private bool closeMemory;
     public PlayableDirector canvasStartTimeline;
     public PlayableDirector canvasCloseTimeline;
 
     private void Start()
     {
-        closeMemory = false;
         EventManager.StartListening("CloseMemory", endTimeline);
     }
 
     public void startTimeline()
     {
+        Debug.Log("timeline is started");
+        canvasStartTimeline.enabled = true;
         canvasStartTimeline.Play();
     }
 
@@ -26,9 +26,10 @@ public class CanvasManager : MonoBehaviour
     }
     public void endTimeline(object data)
     {
-        if(closeMemory = (bool)data)
+        if((bool)data)
         {
-            canvasStartTimeline.Stop();
+            Debug.Log((bool)data);
+            //canvasStartTimeline.Stop();
             canvasStartTimeline.enabled = false;
             canvasCloseTimeline.Play();
         }

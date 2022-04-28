@@ -438,7 +438,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 1073741824
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -660,7 +660,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 54f4a097c79b1344ebc4c403b5ac71d6, type: 2}
   m_InitialState: 0
-  m_WrapMode: 2
+  m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -929,7 +929,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: c2832cf15efd4074f86b5aebde5804b8, type: 2}
   m_InitialState: 0
-  m_WrapMode: 2
+  m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -1185,6 +1185,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 158385890903407551}
+        m_TargetAssemblyTypeName: OpenBox, Assembly-CSharp
+        m_MethodName: sphereUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   sphereIsUp:
     m_PersistentCalls:
       m_Calls:
@@ -1215,8 +1227,8 @@ MonoBehaviour:
   box: {fileID: 158385890903407559}
   rippleSphere: {fileID: 158385889591801541}
   playerAnimator: {fileID: 0}
-  offset: 1
-  smoothSpeed: 0.05
+  sphereNewPos: {x: 0, y: 0.5, z: 0}
+  timeToGoUp: 2
   expansion: 1.44
   spread: 1.52
   fluxIntensity: 1.22
