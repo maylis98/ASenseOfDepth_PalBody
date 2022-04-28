@@ -6,28 +6,27 @@ using UnityEngine.Playables;
 public class TimelineManager : MonoBehaviour
 {
     private bool gameIsStarted;
-    private PlayableDirector timelineStartGame;
+
+    public PlayableDirector[] timelines;
     public AudioSource gameAudio;
+
     void Start()
     {
-        timelineStartGame = GetComponent<PlayableDirector>();
-        gameIsStarted = false;
-        EventManager.StartListening("StartGame", startGameTimeline);
     }
 
-    public void startGameTimeline(object data)
+    public void startTimeline(int indexTimelineToStart)
     {
+        timelines[indexTimelineToStart].Play();
+    }
 
-        if(gameIsStarted =(bool)data)
+    public void endTimeline(int indexTimelineToStop)
+    {
+        timelines[indexTimelineToStop].Stop();
+
+        if(indexTimelineToStop == 1)
         {
-            timelineStartGame.Play();
+            gameAudio.Play();
         }
-    }
-
-    public void endGameTimeline()
-    {
-        timelineStartGame.Stop();
-        gameAudio.Play();
     }
 
 }

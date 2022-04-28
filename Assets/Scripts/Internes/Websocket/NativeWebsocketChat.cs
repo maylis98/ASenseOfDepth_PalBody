@@ -63,10 +63,22 @@ public class NativeWebsocketChat : MonoBehaviour
 
                 switch (message)
                 {
+                    //Intro Manager
                     case "start intro":
-                        FindObjectOfType<EmitterOrder>().StartGameTimeline(true);
+                        FindObjectOfType<TimelineManager>().startTimeline(0);
                         Debug.Log("game is started");
                         break;
+                    case "first dialogue is end":
+                        FindObjectOfType<TimelineManager>().endTimeline(0);
+                        FindObjectOfType<TimelineManager>().startTimeline(1);
+                        Debug.Log("middle of intro");
+                        break;
+                    case "second dialogue is end":
+                        FindObjectOfType<TimelineManager>().endTimeline(1);
+                        Debug.Log("end of intro");
+                        break;
+
+                    //Main Manager
                     case "end of memory":
                         FindObjectOfType<EmitterOrder>().ARSceneEnd(true);
                         Debug.Log("close canvas memory");
