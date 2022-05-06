@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ForceFieldManager : MonoBehaviour
 {
     public Vector3 smallSize;
     public Vector3 bigSize;
     public float transitionTime;
+    public UnityEvent afterForceField;
+
     private MeshRenderer forceFieldRenderer;
 
     void Start()
@@ -39,6 +42,8 @@ public class ForceFieldManager : MonoBehaviour
 
         yield return new WaitForSeconds(waitingTime);
         forceFieldRenderer.enabled = true;
+        afterForceField.Invoke();
+
         StopAllCoroutines();
     }
 

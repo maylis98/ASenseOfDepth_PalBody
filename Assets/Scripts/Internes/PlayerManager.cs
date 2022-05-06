@@ -7,6 +7,9 @@ public class PlayerManager : MonoBehaviour
     public Animator characterAnimator;
     public GameObject veil;
     public GameObject body;
+    public Material veilNewMaterial;
+
+    private SkinnedMeshRenderer veilRenderer;
     private Material veilMaterial;
     private Material bodyMaterial;
     //public SkinnedMeshRenderer veilMesh;
@@ -32,9 +35,11 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         IsBlinking = false;
-        veilMaterial = veil.GetComponent<Renderer>().sharedMaterial;
+
+        veilRenderer = veil.GetComponent<SkinnedMeshRenderer>();
+        //veilMaterial = veil.GetComponent<Renderer>().sharedMaterial;
         bodyMaterial = body.GetComponent<Renderer>().sharedMaterial;
-        veilMaterial.color = colorToChange;
+        veilNewMaterial.color = colorToChange;
         bodyMaterial.SetColor("_Color_A", startColorA);
     }
 
@@ -112,6 +117,7 @@ public class PlayerManager : MonoBehaviour
 
     public void veilDisappearBodyAppear()
     {
+        veilRenderer.material = veilNewMaterial;
         StartCoroutine(LerpVeilColor(endColor, timeVeilDisappear));
         StartCoroutine(LerpBodyGradient(endColorA, timeBodyAppear));
     }
@@ -121,15 +127,15 @@ public class PlayerManager : MonoBehaviour
     IEnumerator LerpVeilColor(Color targetColor, float duration)
     {
         float time = 0;
-        Color startColor = veilMaterial.color;
+        Color startColor = veilNewMaterial.color;
         while (time < duration)
         {
-            veilMaterial.color = Color.Lerp(startColor, targetColor, time / duration);
+            veilNewMaterial.color = Color.Lerp(startColor, targetColor, time / duration);
             time += Time.deltaTime;
             yield return null;
         }
 
-        veilMaterial.color = targetColor;
+        veilNewMaterial.color = targetColor;
     }
 
     IEnumerator LerpBodyGradient(Color endColor, float durationFade)
