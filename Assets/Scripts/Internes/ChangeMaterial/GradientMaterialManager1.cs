@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GradientMaterialManager : MonoBehaviour
+public class GradientMaterialBox : MonoBehaviour
 {
     public float valueToChange;
     public float targetValue;
@@ -12,7 +12,7 @@ public class GradientMaterialManager : MonoBehaviour
     private Color colorToChange;
     [SerializeField]
     private Color targetColor;
-    public float timeToFade;
+    private float timeToFade;
 
     private Material objMaterial;
     private void Start()

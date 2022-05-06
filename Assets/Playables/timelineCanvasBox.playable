@@ -25,7 +25,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 8295803558315034796}
-    m_Duration: 16.283333333333335
+    m_Duration: 7.5
     m_TimeScale: 1
     m_ParentTrack: {fileID: -5768280319557031270}
     m_EaseInDuration: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: imageIsInvisible
   - m_Version: 1
-    m_Start: 16.283333333333335
+    m_Start: 7.5
     m_ClipIn: 0
     m_Asset: {fileID: 1114679740510029077}
     m_Duration: 6
@@ -160,7 +160,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: imageAppear
   - m_Version: 1
-    m_Start: 22.283333333333335
+    m_Start: 13.500000000000005
     m_ClipIn: 0
     m_Asset: {fileID: 7781417772175507744}
     m_Duration: 7.666666666666664
@@ -296,7 +296,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 756922248924867607}
-    m_Duration: 14.916666666666666
+    m_Duration: 5.016666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: -246241209557145732}
     m_EaseInDuration: 0
@@ -329,25 +329,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -362,10 +344,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: canvasToFullWhite
   - m_Version: 1
-    m_Start: 14.916666666666666
+    m_Start: 5.016666666666667
     m_ClipIn: 0
     m_Asset: {fileID: 623460539427171824}
-    m_Duration: 15.033333333333333
+    m_Duration: 24.933333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: -246241209557145732}
     m_EaseInDuration: 0
@@ -374,25 +356,7 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -564,7 +528,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 8716127892493575919}
-    m_Duration: 14.916666666666666
+    m_Duration: 10.683333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5447184669733005343}
     m_EaseInDuration: 0
@@ -630,7 +594,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: topTextIsInvisible
   - m_Version: 1
-    m_Start: 14.916666666666666
+    m_Start: 10.683333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 8722861335196790637}
     m_Duration: 15.033333333333333
