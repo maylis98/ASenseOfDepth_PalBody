@@ -37,7 +37,7 @@ public class PlayerManager : MonoBehaviour
         IsBlinking = false;
 
         veilRenderer = veil.GetComponent<SkinnedMeshRenderer>();
-        //veilMaterial = veil.GetComponent<Renderer>().sharedMaterial;
+        veilMaterial = veil.GetComponent<Renderer>().sharedMaterial;
         bodyMaterial = body.GetComponent<Renderer>().sharedMaterial;
         veilNewMaterial.color = colorToChange;
         bodyMaterial.SetColor("_Color_A", startColorA);

@@ -16,6 +16,7 @@ TagManager:
   - OpenBox
   - fragmentBox
   - ChangeCamera
+  - Gate
   layers:
   - Default
   - TransparentFX

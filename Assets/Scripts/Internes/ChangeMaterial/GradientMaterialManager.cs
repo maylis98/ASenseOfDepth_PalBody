@@ -6,12 +6,15 @@ public class GradientMaterialManager : MonoBehaviour
 {
     public float valueToChange;
     public float targetValue;
+    public float initialValue;
     public float transitionTime;
 
     [SerializeField]
     private Color colorToChange;
     [SerializeField]
     private Color targetColor;
+    [SerializeField]
+    private Color initialColor;
     public float timeToFade;
 
     private Material objMaterial;
@@ -34,6 +37,10 @@ public class GradientMaterialManager : MonoBehaviour
         StartCoroutine(LerpMaterial(targetValue, transitionTime));
     }
 
+    public void changeMaterialColor()
+    {
+        StartCoroutine(LerpAlpha(targetColor, timeToFade));
+    }
 
 
     IEnumerator LerpMaterial(float endValue, float duration)
@@ -77,6 +84,17 @@ public class GradientMaterialManager : MonoBehaviour
             time += Time.deltaTime;
             objMaterial.SetColor("_Color_B", colorToChange);
             yield return null;
+        }
+
+
+        if(this.gameObject.tag == "Gate")
+        {
+            yield return new WaitForSeconds(10);
+            colorToChange = initialColor;
+            valueToChange = initialValue;
+            objMaterial.SetFloat("_BlendHeight", valueToChange);
+            objMaterial.SetColor("_Color_B", colorToChange);
+            Debug.Log("color changed");
         }
    
     }
