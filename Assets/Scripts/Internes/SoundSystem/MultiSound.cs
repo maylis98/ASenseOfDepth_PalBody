@@ -7,6 +7,7 @@ public class MultiSound : MonoBehaviour
 {
     public AudioClip[] audioClips;
     public int iCurrentClip = -1;
+    public float volumeLevel = 1;
 
     private AudioSource source;
 
@@ -21,6 +22,7 @@ public class MultiSound : MonoBehaviour
         {
             iCurrentClip = Mathf.Min(audioClips.Length - 1, iCurrentClip);
             source.PlayOneShot(audioClips[iCurrentClip]);
+            source.volume = volumeLevel;
         }
     }
 

@@ -126,14 +126,14 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &7069879976275286252
+--- !u!1102 &6259407752111335989
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: view Focus
+  m_Name: view from Side
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -152,14 +152,14 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &7321980352931837988
+--- !u!1102 &7069879976275286252
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: view from Side
+  m_Name: view Focus
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -217,9 +217,6 @@ AnimatorStateMachine:
     m_State: {fileID: 4076433077082506971}
     m_Position: {x: 30, y: 250, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 7321980352931837988}
-    m_Position: {x: 30, y: 400, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 548983263671193268}
     m_Position: {x: 30, y: 320, z: 0}
   - serializedVersion: 1
@@ -234,6 +231,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -7545751305021541938}
     m_Position: {x: 30, y: 460, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 6259407752111335989}
+    m_Position: {x: 30, y: 390, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

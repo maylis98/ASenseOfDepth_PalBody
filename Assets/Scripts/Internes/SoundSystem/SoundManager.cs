@@ -13,6 +13,9 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         boxIsTrigger(false);
+        soundHeartBeat.volumeLevel = 0.6f;
+        soundBreath.volumeLevel = 0.5f;
+        soundWater.volumeLevel = 1f;
     }
 
     public void boxIsTrigger(bool IsTrigger)
@@ -42,6 +45,13 @@ public class SoundManager : MonoBehaviour
 
     }
 
+    public void IsStressed()
+    {
+        StartCoroutine(stressCurve());
+        //waterPresence();
+
+    }
+
     public void heartbeatReturnToDefault()
     {
         soundHeartBeat.iCurrentClip = -1;
@@ -57,6 +67,34 @@ public class SoundManager : MonoBehaviour
     public void calmWater()
     {
         soundWater.iCurrentClip = -1;
+    }
+
+    IEnumerator stressCurve()
+    {
+        soundHeartBeat.iCurrentClip = 2;
+        soundHeartBeat.volumeLevel = 1f;
+
+        yield return new WaitForSeconds(3);
+
+        soundHeartBeat.iCurrentClip = 4;
+
+        yield return new WaitForSeconds(3);
+
+        soundHeartBeat.iCurrentClip = 6;
+
+        yield return new WaitForSeconds(10);
+
+        soundHeartBeat.iCurrentClip = 4;
+
+        yield return new WaitForSeconds(5);
+
+        soundHeartBeat.iCurrentClip = 2;
+
+        yield return new WaitForSeconds(5);
+
+        soundHeartBeat.iCurrentClip = 1;
+        soundHeartBeat.volumeLevel = 0.6f;
+
     }
 
     IEnumerator waterRising()

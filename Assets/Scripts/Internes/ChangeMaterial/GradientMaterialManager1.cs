@@ -6,6 +6,7 @@ public class GradientMaterialBox : MonoBehaviour
 {
     public float valueToChange;
     public float targetValue;
+
     public float transitionTime;
 
     [SerializeField]

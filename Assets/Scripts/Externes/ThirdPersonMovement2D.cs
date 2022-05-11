@@ -7,6 +7,8 @@ public class ThirdPersonMovement2D : MonoBehaviour
     private Vector3 direction;
 
     private bool moveRight;
+    private bool moveBackwards;
+
     private float horizontal;
     public float speed;
     public float jumpForce = 10;
@@ -23,12 +25,14 @@ public class ThirdPersonMovement2D : MonoBehaviour
     private void Start()
     {
         moveRight = false;
+        moveBackwards = false;
         //followingObj.SetActive(false);
     }
 
     void Update()
     {
         EventManager.StartListening("PlayerInput", stateofMove);
+        EventManager.StartListening("PlayerBack", moveBack);
         keyboardInput();
 
     }
@@ -50,6 +54,21 @@ public class ThirdPersonMovement2D : MonoBehaviour
             horizontal = 0;
             FindObjectOfType<DistortionFieldManager>().goBig();
             //StartCoroutine(FieldAppear());
+        }
+    }
+
+    private void moveBack(object backButtonIsPressed)
+    {
+        moveBackwards = (bool)backButtonIsPressed;
+
+        if (moveBackwards == true)
+        {
+            horizontal = -1;
+            FindObjectOfType<DistortionFieldManager>().goSmall();
+        }
+        else
+        {
+            return;
         }
     }
 

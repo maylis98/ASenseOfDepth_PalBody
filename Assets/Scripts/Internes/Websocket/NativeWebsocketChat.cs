@@ -43,9 +43,9 @@ public class NativeWebsocketChat : MonoBehaviour
 
         websocket.OnMessage += (bytes) =>
         {
-            Debug.Log("OnMessage!");
-            Debug.Log(bytes.Length);
-            Debug.Log(bytes[0]);
+
+/*            Debug.Log(bytes.Length);
+            Debug.Log(bytes[0]);*/
             //string str = Convert.ToString(bytes);
             //string str = BitConverter.ToString(bytes);
             //string str = Encoding.Default.GetString(bytes);
@@ -66,22 +66,18 @@ public class NativeWebsocketChat : MonoBehaviour
                     //Intro Manager
                     case "start intro":
                         FindObjectOfType<TimelineManager>().startTimeline(0);
-                        Debug.Log("game is started");
                         break;
                     case "first dialogue is end":
                         FindObjectOfType<TimelineManager>().endTimeline(0);
                         FindObjectOfType<TimelineManager>().startTimeline(1);
-                        Debug.Log("middle of intro");
                         break;
                     case "second dialogue is end":
                         FindObjectOfType<TimelineManager>().endTimeline(1);
-                        Debug.Log("end of intro");
                         break;
 
                     //Main Manager
                     case "end of memory":
                         FindObjectOfType<EmitterOrder>().ARSceneEnd(true);
-                        Debug.Log("close canvas memory");
                         break;
                     case "player move":
                         FindObjectOfType<EmitterOrder>().SendInputdata(true);
@@ -89,8 +85,10 @@ public class NativeWebsocketChat : MonoBehaviour
                     case "player static":
                         FindObjectOfType<EmitterOrder>().SendInputdata(false);
                         break;
+                    case "player back":
+                        FindObjectOfType<EmitterOrder>().SendBackwards(true);
+                        break;
                     default:
-                        Debug.Log("Nothing to display");
                         break;
                 }
             }

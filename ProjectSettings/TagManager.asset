@@ -17,6 +17,8 @@ TagManager:
   - fragmentBox
   - ChangeCamera
   - Gate
+  - Water
+  - PlayerLimit
   layers:
   - Default
   - TransparentFX

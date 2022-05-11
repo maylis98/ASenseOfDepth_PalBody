@@ -15,7 +15,6 @@ public class CanvasManager : MonoBehaviour
 
     public void startTimeline()
     {
-        Debug.Log("timeline is started");
         canvasStartTimeline.enabled = true;
         canvasStartTimeline.Play();
     }
@@ -28,7 +27,6 @@ public class CanvasManager : MonoBehaviour
     {
         if((bool)data)
         {
-            Debug.Log((bool)data);
             //canvasStartTimeline.Stop();
             canvasStartTimeline.enabled = false;
             canvasCloseTimeline.Play();

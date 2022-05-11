@@ -6,7 +6,6 @@ public class EmitterOrder : MonoBehaviour
 {
     public void ARSceneEnd(bool endMemory)
     {
-        Debug.Log("the AR scene is finished");
         EventManager.TriggerEvent("CloseMemory", endMemory);
     }
 
@@ -14,7 +13,10 @@ public class EmitterOrder : MonoBehaviour
     {
         EventManager.TriggerEvent("PlayerInput", moveButtonIsPressed);
     }
-
+    public void SendBackwards(bool backwardButtonIsPressed)
+    {
+        EventManager.TriggerEvent("PlayerBack", backwardButtonIsPressed);
+    }
 
 }
 
