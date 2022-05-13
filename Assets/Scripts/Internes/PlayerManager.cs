@@ -8,10 +8,12 @@ public class PlayerManager : MonoBehaviour
     public GameObject veil;
     public GameObject body;
     public Material veilNewMaterial;
+    public GameObject groundCheck;
 
     private SkinnedMeshRenderer veilRenderer;
     private Material veilMaterial;
     private Material bodyMaterial;
+    private float groundPos;
     //public SkinnedMeshRenderer veilMesh;
     private bool IsBlinking;
 
@@ -41,7 +43,16 @@ public class PlayerManager : MonoBehaviour
         bodyMaterial = body.GetComponent<Renderer>().sharedMaterial;
         veilNewMaterial.color = colorToChange;
         bodyMaterial.SetColor("_Color_A", startColorA);
+
+        groundPos = groundCheck.transform.position.y;
+
+
     }
+
+    /*private void Update()
+    {
+        FindObjectOfType<ProgressBar>().GetCurrentFill(groundPos, lowLevel, highLevel);
+    }*/
 
     public void IsScared()
     {

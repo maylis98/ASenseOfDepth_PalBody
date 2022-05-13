@@ -550,7 +550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7498321}
   m_LocalRotation: {x: -0, y: -0.20364168, z: -0, w: 0.9790455}
-  m_LocalPosition: {x: 39.84513, y: 0.44114113, z: 0.83331347}
+  m_LocalPosition: {x: -21.154873, y: 3.6191378, z: 0.8333125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 505144800}
@@ -880,6 +880,9 @@ MonoBehaviour:
           m_StringArgument: bugs appear
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -1272,6 +1275,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -1832,6 +1838,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -2246,6 +2255,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 772758105}
+        m_TargetAssemblyTypeName: PPManager, Assembly-CSharp
+        m_MethodName: Vignettage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 772758105}
+        m_TargetAssemblyTypeName: PPManager, Assembly-CSharp
+        m_MethodName: exitVignettage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   after1Second:
     m_PersistentCalls:
       m_Calls:
@@ -2326,7 +2362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256746732}
   m_LocalRotation: {x: 0, y: 0.43051103, z: 0, w: 0.9025853}
-  m_LocalPosition: {x: 39.437122, y: 0.64114094, z: 0.45919132}
+  m_LocalPosition: {x: -21.562878, y: 3.819138, z: 0.45919085}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 677009126}
@@ -2601,6 +2637,9 @@ MonoBehaviour:
           m_StringArgument: view DiveIn
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -3093,6 +3132,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -3219,7 +3261,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.104456, y: 0.03, z: -0.05099964}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 545990854}
   m_Father: {fileID: 433877754}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3251,18 +3294,6 @@ MonoBehaviour:
   trigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 798169638}
-        m_TargetAssemblyTypeName: NativeWebsocketChat, Assembly-CSharp
-        m_MethodName: SendChatMessage
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: diving part 1
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 7156485192153040724}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: Play
@@ -3323,6 +3354,21 @@ MonoBehaviour:
           m_StringArgument: Falling & Getting Up
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 798169638}
+        m_TargetAssemblyTypeName: NativeWebsocketChat, Assembly-CSharp
+        m_MethodName: SendChatMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: diving part 1 main
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -4694,6 +4740,84 @@ Transform:
   m_Father: {fileID: 745820802}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &545990853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 545990854}
+  - component: {fileID: 545990855}
+  - component: {fileID: 545990856}
+  m_Layer: 3
+  m_Name: Pre-Focus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &545990854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545990853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.19, y: -0.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 407634814}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &545990855
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545990853}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.95, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &545990856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545990853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca5cd3d8628904144ad613123b6c1155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 798169638}
+        m_TargetAssemblyTypeName: NativeWebsocketChat, Assembly-CSharp
+        m_MethodName: SendChatMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: diving part 1 pre
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  after1Second:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &548813272
 GameObject:
   m_ObjectHideFlags: 0
@@ -5731,6 +5855,11 @@ MonoBehaviour:
   windAnimator: {fileID: 1288732177}
   fragmentBox1: {fileID: 231734589}
   timeUntilGoDown: 15
+--- !u!1 &657600675 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4495942024720959043, guid: 478508f17e2c69c44aecc0b3a2a275ef, type: 3}
+  m_PrefabInstance: {fileID: 4495942023474611886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &664607988
 GameObject:
   m_ObjectHideFlags: 0
@@ -5792,6 +5921,9 @@ MonoBehaviour:
           m_StringArgument: view from Back
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -6615,6 +6747,7 @@ GameObject:
   - component: {fileID: 772758104}
   - component: {fileID: 772758102}
   - component: {fileID: 772758103}
+  - component: {fileID: 772758105}
   m_Layer: 0
   m_Name: PostProcessing
   m_TagString: Untagged
@@ -6666,6 +6799,20 @@ Transform:
   m_Father: {fileID: 1903241985}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &772758105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772758101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b05484219076104cb042ed52d40e590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PP: {fileID: 11400000, guid: 7736cd430133c4e4cb92eb7940f5c933, type: 2}
+  duration: 2
 --- !u!1 &798169637
 GameObject:
   m_ObjectHideFlags: 0
@@ -7013,6 +7160,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -7214,6 +7364,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -7606,7 +7759,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: so focus
+          m_StringArgument: diving part 2
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2016601008}
@@ -7636,6 +7789,33 @@ MonoBehaviour:
       - m_Target: {fileID: 1049288396}
         m_TargetAssemblyTypeName: SpriteColorManager, Assembly-CSharp
         m_MethodName: changeColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 772758105}
+        m_TargetAssemblyTypeName: PPManager, Assembly-CSharp
+        m_MethodName: Vignettage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 772758105}
+        m_TargetAssemblyTypeName: PPManager, Assembly-CSharp
+        m_MethodName: exitVignettage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8810,6 +8990,9 @@ MonoBehaviour:
           m_StringArgument: Falling & Getting Up
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -10090,45 +10273,9 @@ MonoBehaviour:
           m_StringArgument: player static
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2090726129}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: IsSurprised
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 798169640}
-        m_TargetAssemblyTypeName: EmitterOrder, Assembly-CSharp
-        m_MethodName: SendBackwards
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: danger
-          m_BoolArgument: 1
-        m_CallState: 2
   after1Second:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2090726129}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: IsNotSurprised
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   after5Seconds:
     m_PersistentCalls:
       m_Calls:
@@ -10362,6 +10509,9 @@ MonoBehaviour:
           m_StringArgument: view from Side
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -11685,6 +11835,9 @@ MonoBehaviour:
           m_StringArgument: end of Game
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -12456,7 +12609,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: player back
+          m_StringArgument: end of memory
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1639059061
@@ -13420,7 +13573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796474325}
   m_LocalRotation: {x: 0, y: -0.20364168, z: 0, w: 0.9790455}
-  m_LocalPosition: {x: 39.93179, y: 0.39114094, z: 0.5520587}
+  m_LocalPosition: {x: -21.06821, y: 3.569138, z: 0.5520592}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1829001538}
@@ -13579,6 +13732,9 @@ MonoBehaviour:
           m_StringArgument: view Focus
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -14000,7 +14156,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839159316}
   m_LocalRotation: {x: 0.15039659, y: 0.349679, z: -0.056980163, w: 0.922962}
-  m_LocalPosition: {x: 38.41354, y: 0.66818976, z: -0.6776962}
+  m_LocalPosition: {x: -22.586464, y: 3.8461888, z: -0.6776962}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1109552138}
@@ -14242,7 +14398,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 5bbe8892588ad74439ba0928ca43b320, type: 2}
   m_InitialState: 0
-  m_WrapMode: 1
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -14356,7 +14512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903241983}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40.563423, y: 0.29114103, z: -0.759284}
+  m_LocalPosition: {x: -20.436575, y: 3.469138, z: -0.759284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2128133223}
@@ -14959,7 +15115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969371349}
   m_LocalRotation: {x: 0, y: 0.6883546, z: 0, w: 0.72537434}
-  m_LocalPosition: {x: 36.957134, y: -0.20885897, z: 2.0073571}
+  m_LocalPosition: {x: -24.04287, y: 2.969138, z: 2.0073576}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 909888387}
@@ -15133,6 +15289,33 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 772758105}
+        m_TargetAssemblyTypeName: PPManager, Assembly-CSharp
+        m_MethodName: Vignettage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 772758105}
+        m_TargetAssemblyTypeName: PPManager, Assembly-CSharp
+        m_MethodName: exitVignettage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16330,7 +16513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
       propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
       propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -16351,7 +16534,7 @@ PrefabInstance:
     - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
       propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2016601008}
+      objectReference: {fileID: 25442985}
     - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
       propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
@@ -16382,7 +16565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
       propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: changeImage
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
       propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -16402,11 +16585,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
       propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ImageCanvasManager, Assembly-CSharp
+      value: UnityEngine.Animator, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
       propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
       propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
@@ -16419,6 +16602,10 @@ PrefabInstance:
     - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
       propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
       value: view from Side
+      objectReference: {fileID: 0}
+    - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
+      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Kneeling Down
       objectReference: {fileID: 0}
     - target: {fileID: 158385890092548482, guid: 7546f4505728742448a95cd62992ada0, type: 3}
       propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -16976,6 +17163,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   after1Second:
     m_PersistentCalls:
       m_Calls: []
@@ -19330,11 +19520,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4495942024337912897, guid: 478508f17e2c69c44aecc0b3a2a275ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 47.00009
+      value: -13.999908
       objectReference: {fileID: 0}
     - target: {fileID: 4495942024337912897, guid: 478508f17e2c69c44aecc0b3a2a275ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.397997
+      value: -1.22
       objectReference: {fileID: 0}
     - target: {fileID: 4495942024337912897, guid: 478508f17e2c69c44aecc0b3a2a275ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19384,6 +19574,10 @@ PrefabInstance:
       propertyPath: endColorA.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4495942024337912927, guid: 478508f17e2c69c44aecc0b3a2a275ef, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 657600675}
     - target: {fileID: 4495942024337912927, guid: 478508f17e2c69c44aecc0b3a2a275ef, type: 3}
       propertyPath: veilNewMaterial
       value: 
@@ -21570,6 +21764,10 @@ PrefabInstance:
     - target: {fileID: 315708430998204042, guid: cbe2e60150903e44f88d92bac31acb5d, type: 3}
       propertyPath: m_Name
       value: ProgressBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 315708430998204042, guid: cbe2e60150903e44f88d92bac31acb5d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 315708431807593362, guid: cbe2e60150903e44f88d92bac31acb5d, type: 3}
       propertyPath: m_Color.b

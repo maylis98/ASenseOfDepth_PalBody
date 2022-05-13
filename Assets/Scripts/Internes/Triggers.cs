@@ -7,6 +7,8 @@ public class Triggers : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent trigger;
+    [SerializeField]
+    private UnityEvent triggerExit;
 
     [SerializeField]
     private UnityEvent after1Second;
@@ -24,5 +26,13 @@ public class Triggers : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         after1Second.Invoke();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            triggerExit.Invoke();
+        }
     }
 }
