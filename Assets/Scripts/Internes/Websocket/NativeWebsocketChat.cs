@@ -63,6 +63,11 @@ public class NativeWebsocketChat : MonoBehaviour
 
                 switch (message)
                 {
+                    //Game Manager
+                    case "restart":
+                        FindObjectOfType<LevelLoader>().Restart();
+                        break;
+
                     //Intro Manager
                     case "start intro":
                         FindObjectOfType<TimelineManager>().startTimeline(0);
