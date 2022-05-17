@@ -104,11 +104,12 @@ public class SoundManager : MonoBehaviour
 
         yield return new WaitForSeconds(5);
 
-        soundHeartBeat.iCurrentClip = 0;
+        soundHeartBeat.iCurrentClip = 1;
 
         yield return new WaitForSeconds(25);
 
         soundWater.iCurrentClip = 0;
+        soundHeartBeat.iCurrentClip = -1;
     }
 
     IEnumerator stopWaterPresence()
