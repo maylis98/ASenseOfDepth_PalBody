@@ -19,6 +19,7 @@ TagManager:
   - Gate
   - Water
   - PlayerLimit
+  - Recorder
   layers:
   - Default
   - TransparentFX
