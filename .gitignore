@@ -66,3 +66,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Personal
+/[Aa]ssets/[Ss]ons/intro_shortversion.wav
+/[Aa]ssets/[Ss]ons/intro_firstBreath.wav
+/[Aa]ssets/[Oo]bj/sphere.fbx
