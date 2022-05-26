@@ -12,6 +12,8 @@ public class Triggers : MonoBehaviour
 
     [SerializeField]
     private UnityEvent after1Second;
+    [SerializeField]
+    private UnityEvent afterSec;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,6 +21,7 @@ public class Triggers : MonoBehaviour
         {
             trigger.Invoke();
             StartCoroutine(stopAnim());
+            StartCoroutine(afterSeconds(3));
         }
     }
 
@@ -26,6 +29,12 @@ public class Triggers : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         after1Second.Invoke();
+    }
+
+    IEnumerator afterSeconds(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        afterSec.Invoke();
     }
 
     private void OnTriggerExit(Collider other)

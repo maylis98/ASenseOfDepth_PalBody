@@ -69,5 +69,8 @@ crashlytics-build.properties
 
 # Personal
 /[Aa]ssets/[Ss]ons/intro_shortversion.wav
+/[Aa]ssets/[Ss]ons/intro_shortversion.wav.meta
 /[Aa]ssets/[Ss]ons/intro_firstBreath.wav
+/[Aa]ssets/[Ss]ons/intro_shortversion.wav.meta
 /[Aa]ssets/[Oo]bj/sphere.fbx
+/[Aa]ssets/[Oo]bj/sphere.fbx.meta
