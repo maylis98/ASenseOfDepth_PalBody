@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CapsuleManager : MonoBehaviour
+public class Capsule2Manager : MonoBehaviour
 {
     public GameObject lightRay;
     public Rigidbody rB;
@@ -25,7 +25,7 @@ public class CapsuleManager : MonoBehaviour
         rB.detectCollisions = false;
         whenIsTouched.Invoke();
 
-        StartCoroutine(WaitForSeconds(2));
+        StartCoroutine(WaitForSeconds(3));
     }
 
     public void Leave()

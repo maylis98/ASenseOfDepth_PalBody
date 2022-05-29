@@ -67,6 +67,9 @@ public class NativeWebsocketChat : MonoBehaviour
                     case "restart":
                         FindObjectOfType<LevelLoader>().Restart();
                         break;
+                    case "credits":
+                        FindObjectOfType<LevelLoader>().LoadNextLevel();
+                        break;
 
                     //Intro Manager
                     case "start intro":
@@ -78,6 +81,12 @@ public class NativeWebsocketChat : MonoBehaviour
                         break;
                     case "second dialogue is end":
                         FindObjectOfType<TimelineManager>().endTimeline(1);
+                        break;
+                    case "open capsule":
+                        FindObjectOfType<CapsuleManager>().IsTouched();
+                        break;
+                    case "open capsule 2":
+                        FindObjectOfType<Capsule2Manager>().IsTouched();
                         break;
 
                     //Main Manager

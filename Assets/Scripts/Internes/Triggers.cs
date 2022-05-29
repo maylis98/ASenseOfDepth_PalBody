@@ -21,7 +21,7 @@ public class Triggers : MonoBehaviour
         {
             trigger.Invoke();
             StartCoroutine(stopAnim());
-            StartCoroutine(afterSeconds(3));
+            StartCoroutine(afterSeconds(2));
         }
     }
 

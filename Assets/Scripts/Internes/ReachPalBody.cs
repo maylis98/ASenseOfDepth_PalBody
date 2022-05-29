@@ -19,6 +19,7 @@ public class ReachPalBody : MonoBehaviour
     public GameObject lightOrb;
 
     public UnityEvent afterArm;
+    public UnityEvent atEnd;
 
     private bool objAppear = false;
 
@@ -75,5 +76,6 @@ public class ReachPalBody : MonoBehaviour
         yield return new WaitForSeconds(7);
 
         lightOrb.SetActive(false);
+        atEnd.Invoke();
     }
 }
