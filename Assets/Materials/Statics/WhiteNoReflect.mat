@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dark
+  m_Name: WhiteNoReflect
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_ShaderKeywords: _RECEIVE_SHADOWS_OFF _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECULAR_SETUP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
@@ -97,7 +97,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _ColorCorrectionEnable: 0
     - _Cull: 0
-    - _Cutoff: 0.5
+    - _Cutoff: 0.179
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DirX: 0
@@ -132,14 +132,14 @@ Material:
     - _LmapBlendingMode: 0
     - _LmapEnable: 0
     - _MainTexturePower: 0
-    - _Metallic: 1
+    - _Metallic: 0.68
     - _Mode: 0
     - _OcclusionStrength: 1
     - _OtherSettings: 1
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _RealtimeShadow: 0
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
     - _RimEnable: 0
     - _RimPower: 1
     - _Rotation_B: 0
@@ -172,20 +172,20 @@ Material:
     - _ShowRight: 1
     - _ShowTexture: 1
     - _ShowTop: 1
-    - _Smoothness: 1
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _UVSec: 0
     - _UnityFogEnable: 0
-    - _WorkflowMode: 1
+    - _WorkflowMode: 0
     - _ZWrite: 1
     - _ZWriteOverride: 0
     m_Colors:
     - _AOColor: {r: 0, g: 0, b: 0, a: 1}
     - _AmbientColor: {r: 0, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 0.7254902, g: 0.7254902, b: 0.7254902, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _Color1: {r: 1, g: 1, b: 1, a: 0}
     - _Color1_B: {r: 0.78431374, g: 0.6392157, b: 0.6392157, a: 1}
@@ -202,7 +202,7 @@ Material:
     - _Color2_R: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_T: {r: 1, g: 1, b: 1, a: 1}
     - _Color_Fog: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _EmissionColor: {r: 1, g: 0.6006978, b: 0, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _GizmoPosition_B: {r: 0, g: 0, b: 10, a: 10}
     - _GizmoPosition_D: {r: 0, g: 0, b: 10, a: 10}
     - _GizmoPosition_F: {r: 0, g: 0, b: 10, a: 10}
@@ -219,7 +219,7 @@ Material:
     - _LMColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
     - _TintColor: {r: 0, g: 0, b: 0, a: 1}
     - _UpVector: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

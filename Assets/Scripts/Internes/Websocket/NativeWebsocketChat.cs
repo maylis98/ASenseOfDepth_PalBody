@@ -64,6 +64,9 @@ public class NativeWebsocketChat : MonoBehaviour
                 switch (message)
                 {
                     //Game Manager
+                    case "pal is here":
+                        FindObjectOfType<MenuManager>().showPalBody();
+                        break;
                     case "restart":
                         FindObjectOfType<LevelLoader>().Restart();
                         break;
@@ -73,11 +76,19 @@ public class NativeWebsocketChat : MonoBehaviour
 
                     //Intro Manager
                     case "start intro":
-                        FindObjectOfType<TimelineManager>().startTimeline(0);
+                        //FindObjectOfType<TimelineManager>().startTimeline(0);
+                        break;
+                    case "risks":
+                        FindObjectOfType<IntroTextManager>().showText(0);
+                        break;
+                    case "diver":
+                        FindObjectOfType<IntroTextManager>().showText(1);
+                        FindObjectOfType<IntroTextManager>().hideText(0);
                         break;
                     case "first dialogue is end":
-                        FindObjectOfType<TimelineManager>().endTimeline(0);
-                        FindObjectOfType<TimelineManager>().startTimeline(1);
+                        FindObjectOfType<IntroTextManager>().hideText(1);
+                        /*FindObjectOfType<TimelineManager>().endTimeline(0);
+                        FindObjectOfType<TimelineManager>().startTimeline(1);*/
                         break;
                     case "second dialogue is end":
                         FindObjectOfType<TimelineManager>().endTimeline(1);

@@ -31,7 +31,7 @@ public class LevelLoader : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Menu");
     }
 
 }
