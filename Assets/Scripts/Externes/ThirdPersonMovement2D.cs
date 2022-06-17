@@ -20,13 +20,10 @@ public class ThirdPersonMovement2D : MonoBehaviour
 
     public Transform model;
 
-    public GameObject followingObj;
-
     private void Start()
     {
         moveRight = false;
         moveBackwards = false;
-        //followingObj.SetActive(false);
     }
 
     void Update()
@@ -44,16 +41,14 @@ public class ThirdPersonMovement2D : MonoBehaviour
         if (moveRight == true)
         {
             horizontal = 1;
-            FindObjectOfType<DistortionFieldManager>().goSmall();
-            //followingObj.SetActive(false);
-            //FindObjectOfType<NativeWebsocketChat>().SendChatMessage("distortion field");
+            //FindObjectOfType<DistortionFieldManager>().goSmall();
+
             
         }
         else if (moveRight == false)
         {
             horizontal = 0;
-            FindObjectOfType<DistortionFieldManager>().goBig();
-            //StartCoroutine(FieldAppear());
+            //FindObjectOfType<DistortionFieldManager>().goBig();
         }
     }
 
