@@ -65,6 +65,7 @@ public class NativeWebsocketChat : MonoBehaviour
                 {
                     //Game Manager
                     case "pal is here":
+                        FindObjectOfType<VideoManager>().StopVideo();
                         FindObjectOfType<MenuManager>().showPalBody();
                         break;
                     case "restart":
@@ -99,6 +100,10 @@ public class NativeWebsocketChat : MonoBehaviour
                     case "open capsule 2":
                         FindObjectOfType<Capsule2Manager>().IsTouched();
                         break;
+                    case "play video":
+                        FindObjectOfType<VideoManager>().showVideo();
+                        break;
+                      
 
                     //Main Manager
                     case "end of memory":

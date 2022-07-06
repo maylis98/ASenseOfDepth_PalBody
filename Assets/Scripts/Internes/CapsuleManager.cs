@@ -25,7 +25,7 @@ public class CapsuleManager : MonoBehaviour
         rB.detectCollisions = false;
         whenIsTouched.Invoke();
 
-        StartCoroutine(WaitForSeconds(2));
+        StartCoroutine(WaitForSeconds(1));
     }
 
     public void Leave()
